@@ -1,11 +1,11 @@
-local plugin_name = "myplugin"
+local plugin_name = "treblle"
 local package_name = "kong-plugin-" .. plugin_name
-local package_version = "0.1.0"
+local package_version = "0.0.1"
 local rockspec_revision = "1"
 
-local github_account_name = "Kong"
-local github_repo_name = "kong-plugin"
-local git_checkout = package_version == "dev" and "master" or package_version
+local github_account_name = "Treblle"
+local github_repo_name = "treblle-kong"
+local git_checkout = package_version == "dev" and "main" or package_version
 
 
 package = package_name
@@ -20,7 +20,7 @@ source = {
 description = {
   summary = "Kong is a scalable and customizable API Management Layer built on top of Nginx.",
   homepage = "https://"..github_account_name..".github.io/"..github_repo_name,
-  license = "Apache 2.0",
+  license = "MIT 2.0",
 }
 
 
