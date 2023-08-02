@@ -1,5 +1,11 @@
 {
   "Lua.diagnostics.globals": [
-    "kong"
+    "kong",
+    "describe",
+    "lazy_setup",
+    "it",
+    "lazy_teardown",
+    "before_each",
+    "after_each"
   ]
 }
