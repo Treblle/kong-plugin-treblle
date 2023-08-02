@@ -8,28 +8,31 @@ local schema = {
   fields = {
     -- the 'fields' array is the top-level entry with fields defined by Kong
     { consumer = typedefs.no_consumer }, -- this plugin cannot be configured on a consumer (typical for auth plugins)
-    protocols = {
-      type = "array",
-      required = true,
-      default = { "http", "https" },
-      elements = {
-        type = "string",
-        one_of = { "http", "https" }
-      }
-    },
+    { protocols = typedefs.protocols_http },
     {
       config = {
         -- The 'config' record is the custom part of the plugin schema
         type = "record",
         fields = {
-          project_id = {
-            required = true,
-            type = "string"
+          {
+            project_id = {
+              required = true,
+              type = "string"
+            },
           },
-          api_key = {
-            required = true,
-            type = "string"
+          {
+            api_key = {
+              required = true,
+              type = "string"
+            },
           },
+          {
+            additional_fields_to_mask = {
+              default = {},
+              type = "array",
+              elements = typedefs.header_name
+            }
+          }
         }, -- adding a constraint for the value
       },
     },
