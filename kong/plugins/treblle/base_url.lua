@@ -5,6 +5,8 @@ local base_urls = {
 }
 
 local function get_base_url(config)
+  config = config or {}
+
   if config.debug then
     return "https://debug.treblle.com/"
   else
