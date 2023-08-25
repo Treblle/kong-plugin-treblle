@@ -19,6 +19,7 @@ describe(PLUGIN_NAME .. ": (schema)", function()
       api_key = "Treblle-API-Key",
       project_id = "Treblle-Project-ID",
     })
+
     assert.is_nil(err)
     assert.is_truthy(ok)
   end)

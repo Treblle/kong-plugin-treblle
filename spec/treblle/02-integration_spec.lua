@@ -22,10 +22,11 @@ for _, strategy in helpers.all_strategies() do
           name = PLUGIN_NAME,
           route = { id = route1.id },
           config = {
-            project_id = 'TREBLLE_PROJECT_ID',
-            api_key = 'TREBLLE_API_KEY'
+            project_id = "eR7SYTH0uDaxjG6u",
+            api_key = "ooEN79XBJSlLq9m9IA5mRs01L9tvXeQ4"
           },
         }
+
 
         -- start kong
         assert(helpers.start_kong({
@@ -50,6 +51,18 @@ for _, strategy in helpers.all_strategies() do
 
       after_each(function()
         if client then client:close() end
+      end)
+
+      describe("treblle", function()
+        it("sends reguest to Treblle", function()
+          local r = client:get("/request", {
+            headers = {
+              host = "test1.com"
+            }
+          })
+          -- validate that the request succeeded, response status 200
+          assert.response(r).has.status(200)
+        end)
       end)
     end)
   end

@@ -6,6 +6,7 @@
     "it",
     "lazy_teardown",
     "before_each",
-    "after_each"
+    "after_each",
+    "ngx"
   ]
 }
